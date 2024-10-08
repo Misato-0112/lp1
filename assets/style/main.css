@@ -135,7 +135,7 @@ section {
     display: inline-block;
 }
 
-.entry__button {
+.entry-button {
     width: 30.5rem;
     height: 6.9rem;
     font-size: 2rem;
@@ -148,7 +148,7 @@ section {
 }
 
 @media (min-width: 768px) {
-    .entry__button {
+    .entry-button {
         width: 36rem;
         height: 7.5rem;
         font-size: 2.4rem;
@@ -156,12 +156,12 @@ section {
     }
 }
 
-.entry__button p {
+.entry-button p {
     color: var(--color-white);
 }
 
 @media (min-width: 768px) {
-    .entry__button p {
+    .entry-button p {
         padding-left: 2rem;
     }
 }
@@ -248,7 +248,7 @@ h1.header-logo {
     height: 6rem;
 }
 
-.header-menu__nav ul {
+.header-menu-nav ul {
     display: grid;
     grid-auto-flow: column;
     gap: 5rem;
@@ -260,7 +260,7 @@ h1.header-logo {
 }
 
 /* ヘッダーメニュー申し込みボタン */
-.header-menu .entry__button {
+.header-menu .entry-button {
     width: 28.2rem;
     height: 6rem;
     border-radius: 3.1rem;
@@ -268,13 +268,13 @@ h1.header-logo {
 }
 
 @media (min-width: 768px) {
-    .header-menu .entry__button p {
+    .header-menu .entry-button p {
         padding-left: 0;
     }
 }
 
 /* ハンバーガーメニューボタン */
-.hamburger-menu__button {
+.hamburger-menu-button {
     flex-direction: column;
     row-gap: 0.7rem;
     width: 7rem;
@@ -283,13 +283,13 @@ h1.header-logo {
 }
 
 @media (min-width: 768px) {
-    .hamburger-menu__button {
+    .hamburger-menu-button {
         display: none;
     }
 }
 
 /* ハンバーガーメニューバー */
-.hamburger-menu__bar {
+.hamburger-menu-bar {
     display: block;
     width: 3rem;
     height: 0.4rem;
@@ -301,9 +301,14 @@ h1.header-logo {
 .hamburger-menu {
     display: none;
     position: fixed;
+    top: 7rem;
+    left: 0;
     width: 100%;
     height: 100%;
-    z-index: 100;
+}
+
+.hamburger-menu.active {
+    display: block;
 }
 
 .hamburger-menu-container {
@@ -316,7 +321,7 @@ h1.header-logo {
     color: var(--color-white);
 }
 
-.hamburger-menu__nav {
+.hamburger-menu-nav {
     display: grid;
     grid-auto-flow: row;
     align-items: center;
@@ -324,7 +329,7 @@ h1.header-logo {
     padding-bottom: 3.2rem;
 }
 
-.hamburger-menu__nav li {
+.hamburger-menu-nav li {
     height: 6.7rem;
     font-size: 1.8rem;
     line-height: 1.44;
@@ -332,7 +337,7 @@ h1.header-logo {
     border-bottom: 0.1rem solid rgba(255, 255, 255, 0.5);
 }
 
-.hamburger-menu__nav a {
+.hamburger-menu-nav a {
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -341,17 +346,17 @@ h1.header-logo {
 }
 
 /* ハンバーガーメニュー費用の字間調整 */
-.hamburger-menu__nav li:last-child a {
+.hamburger-menu-nav li:last-child a {
     letter-spacing: 0.3rem;
 }
 
-.hamburger-menu__nav i {
+.hamburger-menu-nav i {
     font-size: 1.4rem;
     padding-right: 1.2rem;
 }
 
 /* ハンバーガーメニュー申し込みボタン */
-.hamburger-menu .entry__button {
+.hamburger-menu .entry-button {
     width: 35rem;
     height: 6.6rem;
     font-size: 1.8rem;
@@ -361,7 +366,7 @@ h1.header-logo {
     border-radius: 3.3rem;
 }
 
-.hamburger-menu .entry__button p {
+.hamburger-menu .entry-button p {
     color: var(--color-blue);
 }
 
@@ -522,35 +527,40 @@ h1.header-logo {
 
 /* メインボタンコンテナ */
 .main-button-container {
-    padding: 0 1.6rem;
+    max-width: 25rem;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px) {
     .main-button-container {
+        max-width: 110rem;
         position: absolute;
         bottom: calc(-7.5rem / 2);
         right: 0;
         left: 0;
         margin: 0 auto;
-        padding: 0 41rem;
     }
 }
 
 .main-button-group {
-    width: 100%;
+    max-width: 25rem;
     display: grid;
     grid-auto-flow: row;
     place-items: center;
     gap: 1.2rem;
     padding-top: 2.4rem;
-    margin: auto;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px) {
     .main-button-group {
-        width: 100%;
+        position: absolute;
+        max-width: 110rem;
         grid-auto-flow: column;
         gap: 4rem;
+        bottom: calc(-7.5rem / 2);
+        right: 0;
+        left: 0;
     }
 }
 
@@ -615,6 +625,12 @@ section#reason {
     margin-left: 0;
 }
 
+@media (min-width: 768px) {
+    #reason .section-title {
+        margin-bottom: 3.7rem;
+    }
+}
+
 /* 理由アイテムグループ */
 .reason-item-group {
     width: 100%;
@@ -630,19 +646,19 @@ section#reason {
 }
 
 /* 理由アイテム */
-.reason-item-group__item {
+.reason-item-group-item {
     display: flex;
     flex-direction: column;
     width: 100%;
 }
 
 @media (min-width: 768px) {
-    .reason-item-group__item {
+    .reason-item-group-item {
         flex-direction: row;
         gap: 4rem;
     }
 
-    .reason-item-group__item:nth-child(2) {
+    .reason-item-group-item:nth-child(2) {
         flex-direction: row-reverse;
     }
 }
@@ -683,7 +699,7 @@ section#reason {
 }
 
 /* 理由アイテムテキストグループ */
-.reason-item-bottom__title {
+.reason-item-bottom-title {
     font-size: 2.4rem;
     font-weight: bold;
     font-style: italic;
@@ -693,25 +709,25 @@ section#reason {
 }
 
 @media (min-width: 768px) {
-    .reason-item-bottom__title {
+    .reason-item-bottom-title {
         font-size: 2.8rem;
         line-height: 1.2;
         margin: 0.55rem 0 0.1rem;
     }
 }
 
-.reason-item-bottom__title span {
+.reason-item-bottom-title span {
     font-size: 3.6rem;
     margin-left: 0.2rem;
 }
 
 @media (min-width: 768px) {
-    .reason-item-bottom__title span {
+    .reason-item-bottom-title span {
         font-size: 4.2rem;
     }
 }
 
-.reason-item-bottom__subtitle {
+.reason-item-bottom-subtitle {
     font-size: 2rem;
     font-weight: bold;
     line-height: 1.4;
@@ -719,7 +735,7 @@ section#reason {
 }
 
 @media (min-width: 768px) {
-    .reason-item-bottom__subtitle {
+    .reason-item-bottom-subtitle {
         font-size: 2.4rem;
         line-height: 1.75;
     }
@@ -794,7 +810,6 @@ section#reason {
 
 /* タブリンク */
 .tabs li {
-    max-width: 45.7%;
     width: calc((100% - 1.5rem) / 2);
     height: 100%;
 }
@@ -809,7 +824,6 @@ section#reason {
     display: inline-block;
     width: 100%;
     height: 100%;
-    padding: 1.5rem 1.9rem;
     cursor: pointer;
     font-size: 1.8rem;
     font-weight: bold;
@@ -818,6 +832,7 @@ section#reason {
     background-color: #f0f0f0;
     border-radius: 1.2rem 1.2rem 0 0;
     text-align: center;
+    padding: 1.5rem 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -854,7 +869,7 @@ section#reason {
 
 @media (min-width: 768px) {
     .tab-content {
-        padding: 3.2rem 3.2rem 3rem 3.2rem;
+        padding: 4rem 3.2rem 3rem 3.2rem;
         border-radius: 0 0 1.2rem 1.2rem;
     }
 }
@@ -897,7 +912,7 @@ section#reason {
 
 /* コンテンツ画像拡大 */
 @media (min-width: 768px) {
-    .content-box__overflow {
+    .content-box-overflow {
         cursor: pointer;
         max-width: 53.2rem;
         max-height: 32.9rem;
@@ -941,9 +956,21 @@ section#cost {
     padding-bottom: 6.4rem;
 }
 
+@media (min-width: 768px) {
+    section#cost {
+        padding-bottom: 7.1rem;
+    }
+}
+
 #cost .section-title {
     letter-spacing: 0.23em;
     margin-left: 2rem;
+}
+
+@media (min-width: 768px) {
+    #cost .section-title {
+        margin-left: 0.9rem;
+    }
 }
 
 /* 費用テーブル */
@@ -970,13 +997,24 @@ section#cost {
 @media (min-width: 768px) {
     .price-table th,
     .price-table td {
-        height: 7.73rem;
+        height: 7.75rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .price-table th {
+        padding-bottom: 0.4rem;
     }
 }
 
 .price-table td {
     border: 0.1rem solid #ddd;
     padding-top: 0.4rem;
+}
+@media (min-width: 768px) {
+    .price-table td {
+        padding-top: 0.2rem;
+    }
 }
 
 .price-table thead th {
@@ -985,14 +1023,19 @@ section#cost {
     line-height: 2.25;
 }
 
+@media (min-width: 768px) {
+    .price-table thead th {
+        height: 7.7rem;
+    }
+}
+
 .price-table thead th:last-child {
     padding-right: 1.3rem;
 }
 
 @media (min-width: 768px) {
     .price-table thead th:last-child {
-        padding-right: 1rem;
-        letter-spacing: 0.1rem;
+        padding-right: 0;
     }
 }
 
@@ -1022,6 +1065,7 @@ section#cost {
 @media (min-width: 768px) {
     .price {
         font-size: 3.2rem;
+        padding-right: 0;
     }
 
     .price span {
@@ -1047,7 +1091,7 @@ section#cost {
 }
 
 /* faqアイテム透過色重ね */
-.faq-search-item__overflow:after {
+.faq-search-item-overflow:after {
     position: absolute;
     content: "";
     left: 0;
@@ -1058,21 +1102,21 @@ section#cost {
 }
 
 /* faqアイテム画像 */
-.faq-search-item__image img {
+.faq-search-item-image img {
     width: 100%;
     height: 17rem;
     object-fit: cover;
 }
 
 @media (min-width: 768px) {
-    .faq-search-item__image img {
+    .faq-search-item-image img {
         height: 32rem;
     }
 }
 
 /* コンテンツ画像拡大 */
 @media (min-width: 768px) {
-    .faq-search-item__overflow {
+    .faq-search-item-overflow {
         cursor: pointer;
         max-width: 100%;
         max-height: 32.9rem;
@@ -1090,7 +1134,7 @@ section#cost {
 }
 
 /* faqアイテムテキスト */
-.faq-search-item__text {
+.faq-search-item-text {
     position: absolute;
     width: 100%;
     height: 3.2rem;
@@ -1105,7 +1149,7 @@ section#cost {
 }
 
 @media (min-width: 768px) {
-    .faq-search-item__text {
+    .faq-search-item-text {
         height: 4.6rem;
         text-align: center;
         font-size: 3.2rem;
@@ -1127,15 +1171,17 @@ section#cost {
 }
 
 /* フッターコピーライト */
-.footer__copyright {
+.footer-copyright {
     font-size: 1.38rem;
-    padding-left: 1.8rem;
+    line-height: 2.15;
+    padding-left: 1.5rem;
 }
 
 @media (min-width: 768px) {
-    .footer__copyright {
+    .footer-copyright {
         font-size: 1.38rem;
         padding-left: 0;
         padding-bottom: 0.7rem;
+        padding-left: 0;
     }
 }

@@ -1,42 +1,33 @@
 $(document).ready(function () {
-    // ハンバーガーメニューのトグル
-    $(".hamburger-menu__button").on("click", function () {
-        $(".hamburger-menu").slideToggle(300);
+    var hamburger = $(".hamburger-menu");
+    $(".hamburger-menu-button").on("click", function () {
+        hamburger.toggleClass("active");
     });
 
     $(window).on("resize", function () {
-        if ($(window).width() > 767) {
-            $(".hamburger-menu").hide();
-        }
+        // console.log('resize');
+        hamburger.removeClass("active");
     });
+});
 
-    $(".hamburger-menu a").on("click", function () {
-        $(".hamburger-menu").hide();
-    });
+// タブ切り替え
+document.querySelectorAll(".tab-link").forEach(function (tab) {
+    tab.addEventListener("click", function (event) {
+        event.preventDefault();
 
-    // タブ切り替え
-    document.querySelectorAll(".tab-link").forEach(function (tab) {
-        tab.addEventListener("click", function (event) {
-            event.preventDefault(); // デフォルトのリンク動作を防ぐ
-
-            // すべてのタブリンクからactiveクラスを削除
-            document.querySelectorAll(".tab-link").forEach(function (link) {
-                link.classList.remove("active");
-            });
-
-            // クリックされたタブリンクにactiveクラスを追加
-            this.classList.add("active");
-
-            // すべてのタブコンテンツを非表示
-            document.querySelectorAll(".tab-content").forEach(function (content) {
-                content.style.display = "none";
-            });
-
-            // 対象のタブコンテンツを表示
-            var targetContent = document.querySelector(this.getAttribute("href"));
-            if (targetContent) {
-                targetContent.style.display = "block";
-            }
+        document.querySelectorAll(".tab-link").forEach(function (link) {
+            link.classList.remove("active");
         });
+
+        this.classList.add("active");
+
+        document.querySelectorAll(".tab-content").forEach(function (content) {
+            content.style.display = "none";
+        });
+
+        var targetContent = document.querySelector(this.getAttribute("href"));
+        if (targetContent) {
+            targetContent.style.display = "block";
+        }
     });
 });
