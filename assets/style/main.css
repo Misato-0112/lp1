@@ -20,7 +20,7 @@ html {
 /* スムーススクロール */
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 10rem;
+    scroll-padding-top: 5rem;
 }
 
 /* 共通------------------ */
@@ -52,7 +52,7 @@ ul {
 
 /* 画像 */
 img {
-    max-width: 100%;
+    width: 100%;
     height: auto;
     vertical-align: bottom;
 }
@@ -108,8 +108,8 @@ section {
     font-weight: bold;
     line-height: 1.2;
     text-align: center;
-    padding-bottom: 2.2rem;
-    padding-left: 1.4rem;
+    margin-bottom: 2.3rem;
+    margin-left: 1.4rem;
 }
 
 .section-title span {
@@ -120,8 +120,8 @@ section {
 @media (min-width: 768px) {
     .section-title {
         font-size: 3.6rem;
-        padding-bottom: 3.7rem;
-        padding-left: 0;
+        margin-bottom: 3.7rem;
+        margin-left: 0;
     }
 
     .section-title span {
@@ -204,26 +204,29 @@ section {
 
 /* ヘッダーロゴ */
 h1.header-logo {
-    width: 100%;
-    height: 3.4rem;
-    font-size: 2.2rem;
-    font-weight: bold;
-    line-height: 1.5;
+    width: 16.45rem;
+    height: 100%;
+    padding-left: 0.1rem;
 }
 
 @media (min-width: 768px) {
     h1.header-logo {
-        height: 4.5rem;
-        font-size: 3.2rem;
+        width: 24.1rem;
     }
 }
 
 .header-logo a {
-    display: inline-block;
+    display: block;
+    margin: auto;
     width: 100%;
     height: 100%;
-    color: var(--color-blue);
-    padding-top: 0.2rem;
+}
+
+.header-logo img {
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
 }
 
 @media (min-width: 768px) {
@@ -391,10 +394,10 @@ h1.header-logo {
 
 /* メインビジュアルタイトルコンテナ */
 .main-visual-title-container {
+    width: 17.5rem;
     position: absolute;
     top: calc(7rem + 3.4rem);
-    left: 0;
-    right: 0;
+    left: 1.6rem;
     display: grid;
     grid-auto-flow: row;
     gap: 1.8rem;
@@ -405,6 +408,8 @@ h1.header-logo {
 
 @media (min-width: 768px) {
     .main-visual-title-container {
+        width: 42rem;
+        left: calc(50% - 55rem);
         top: calc(10rem + 10.4rem);
         gap: 3.5rem;
         max-width: 110rem;
@@ -516,6 +521,10 @@ h1.header-logo {
 }
 
 /* メインボタンコンテナ */
+.main-button-container {
+    padding: 0 1.6rem;
+}
+
 @media (min-width: 768px) {
     .main-button-container {
         position: absolute;
@@ -523,13 +532,15 @@ h1.header-logo {
         right: 0;
         left: 0;
         margin: 0 auto;
+        padding: 0 41rem;
     }
 }
 
 .main-button-group {
-    width: 25rem;
+    width: 100%;
     display: grid;
     grid-auto-flow: row;
+    place-items: center;
     gap: 1.2rem;
     padding-top: 2.4rem;
     margin: auto;
@@ -537,7 +548,7 @@ h1.header-logo {
 
 @media (min-width: 768px) {
     .main-button-group {
-        width: 110rem;
+        width: 100%;
         grid-auto-flow: column;
         gap: 4rem;
     }
@@ -545,15 +556,17 @@ h1.header-logo {
 
 /* メインボタン */
 .main-button {
-    width: 100%;
+    display: inline-block;
+    width: 25rem;
     height: 4.8rem;
     font-size: 1.6rem;
     font-weight: bold;
-    line-height: 2.25;
     text-align: center;
-    vertical-align: middle;
+    line-height: 2.25;
     color: var(--color-white);
     border-radius: 2.5rem;
+    padding: 0.5rem 0;
+    margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -562,6 +575,7 @@ h1.header-logo {
         height: 7.5rem;
         font-size: 2.4rem;
         border-radius: 3.8rem;
+        padding: 1.2rem 0;
     }
 }
 
@@ -569,15 +583,15 @@ h1.header-logo {
     color: var(--color-white);
 }
 
-.main-button-group a:nth-of-type(1) .main-button {
+.main-button-group li:nth-of-type(1) .main-button {
     background-color: #77cb33;
 }
 
-.main-button-group a:nth-of-type(2) .main-button {
+.main-button-group li:nth-of-type(2) .main-button {
     background-color: #f6aa00;
 }
 
-.main-button-group a:nth-of-type(3) .main-button {
+.main-button-group li:nth-of-type(3) .main-button {
     background-color: #3ac8ad;
 }
 
@@ -597,7 +611,8 @@ section#reason {
 
 /* 理由タイトル */
 #reason .section-title {
-    padding-left: 0;
+    margin-bottom: 2.1rem;
+    margin-left: 0;
 }
 
 /* 理由アイテムグループ */
@@ -605,7 +620,7 @@ section#reason {
     width: 100%;
     display: grid;
     grid-auto-flow: row;
-    gap: 3.2rem;
+    gap: 3.4rem;
 }
 
 @media (min-width: 768px) {
@@ -672,21 +687,22 @@ section#reason {
     font-size: 2.4rem;
     font-weight: bold;
     font-style: italic;
-    line-height: 1.3;
+    line-height: 1.5;
     color: var(--color-pink);
-    padding-top: 1.1rem;
+    margin-top: 0.7rem;
 }
 
 @media (min-width: 768px) {
     .reason-item-bottom__title {
         font-size: 2.8rem;
         line-height: 1.2;
-        padding-top: 0.55rem;
+        margin: 0.55rem 0 0.1rem;
     }
 }
 
 .reason-item-bottom__title span {
     font-size: 3.6rem;
+    margin-left: 0.2rem;
 }
 
 @media (min-width: 768px) {
@@ -698,7 +714,8 @@ section#reason {
 .reason-item-bottom__subtitle {
     font-size: 2rem;
     font-weight: bold;
-    line-height: 1.5;
+    line-height: 1.4;
+    margin-top: -0.1rem;
 }
 
 @media (min-width: 768px) {
@@ -709,12 +726,12 @@ section#reason {
 }
 
 .reason-item-description {
-    padding-top: 1rem;
+    margin-top: 1rem;
 }
 
 @media (min-width: 768px) {
     .reason-item-description {
-        padding-top: 1.5rem;
+        margin-top: 1.5rem;
     }
 }
 
@@ -749,20 +766,23 @@ section#reason {
 /* コース・目的コンテナ */
 #course .w-container {
     max-width: 37.5rem;
+    margin-top: 0.2rem;
 }
 
 @media (min-width: 768px) {
     #course .w-container {
         max-width: 116rem;
+        margin-top: 0;
     }
 }
 
 /* タブ */
 .tabs {
     display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    padding: 0 1.6rem;
+    height: 6.6rem;
+    justify-content: space-between;
+    padding-left: 4.26%;
+    padding-right: 4.26%;
 }
 
 @media (min-width: 768px) {
@@ -772,9 +792,23 @@ section#reason {
     }
 }
 
-/* タブボタン */
-.tab-button {
+/* タブリンク */
+.tabs li {
+    max-width: 45.7%;
     width: calc((100% - 1.5rem) / 2);
+    height: 100%;
+}
+
+@media (min-width: 768px) {
+    .tabs li {
+        width: 50%;
+    }
+}
+
+.tab-link {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
     padding: 1.5rem 1.9rem;
     cursor: pointer;
     font-size: 1.8rem;
@@ -783,11 +817,11 @@ section#reason {
     color: rgba(51, 51, 51, 0.5);
     background-color: #f0f0f0;
     border-radius: 1.2rem 1.2rem 0 0;
+    text-align: center;
 }
 
 @media (min-width: 768px) {
-    .tab-button {
-        width: 50%;
+    .tab-link {
         padding-top: 1.3rem;
         padding-bottom: 1.3rem;
         font-size: 2.4rem;
@@ -796,18 +830,24 @@ section#reason {
 }
 
 /* タブボタンactive */
-.tab-button.active {
+.tab-link.active {
     background-color: #f2f9ff;
     color: var(--color-text);
     font-weight: bold;
+    opacity: 1;
 }
 
 /* 学年別/目的別タブ */
+/* 目的別タブは初期状態で非表示 */
+#purpose {
+    display: none;
+}
+
 .tab-content {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 2.9rem 1.6rem 5.3rem 1.6rem;
+    padding: 2.8rem 1.6rem 5.3rem 1.6rem;
     background-color: #f2f9ff;
     border-top: none;
 }
@@ -884,7 +924,9 @@ section#reason {
 .content-box i {
     font-size: 1.5rem;
     color: var(--color-blue);
+    vertical-align: middle;
     padding-right: 0.85rem;
+    padding-bottom: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -895,10 +937,20 @@ section#reason {
 }
 
 /* 費用------------------ */
+section#cost {
+    padding-bottom: 6.4rem;
+}
+
+#cost .section-title {
+    letter-spacing: 0.23em;
+    margin-left: 2rem;
+}
+
 /* 費用テーブル */
 .price-table {
     width: 100%;
     max-width: 60rem;
+    box-sizing: border-box;
     border-collapse: collapse;
     text-align: center;
     border: 0.3rem solid #ccc;
@@ -912,7 +964,7 @@ section#reason {
 
 .price-table th,
 .price-table td {
-    height: 6.42rem;
+    height: 6.4rem;
 }
 
 @media (min-width: 768px) {
@@ -924,6 +976,7 @@ section#reason {
 
 .price-table td {
     border: 0.1rem solid #ddd;
+    padding-top: 0.4rem;
 }
 
 .price-table thead th {
@@ -933,8 +986,7 @@ section#reason {
 }
 
 .price-table thead th:last-child {
-    padding-right: 2rem;
-    letter-spacing: 0.07rem;
+    padding-right: 1.3rem;
 }
 
 @media (min-width: 768px) {
@@ -960,6 +1012,7 @@ section#reason {
     font-family: "Poppins", sans-serif;
     font-size: 2.8rem;
     line-height: 1.28;
+    padding-right: 0.5rem;
 }
 
 .price span {
