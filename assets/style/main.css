@@ -129,8 +129,23 @@ section {
     }
 }
 
-/* ボタン */
+/* ボ0.タン */
 /* 申し込みボタン共通 */
+
+.entry-button-group {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 1.2rem;
+    place-items: center;
+}
+
+@media (min-width: 768px) {
+    .entry-button-group {
+        grid-auto-flow: column;
+        gap: 2rem;
+    }
+}
+
 .entry a {
     display: inline-block;
 }
