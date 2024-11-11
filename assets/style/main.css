@@ -129,7 +129,7 @@ section {
     }
 }
 
-/* ボ0.タン */
+/* ボタン */
 /* 申し込みボタン共通 */
 
 .entry-button-group {
@@ -171,14 +171,12 @@ section {
     }
 }
 
-.entry-button p {
-    color: var(--color-white);
+.entry-button--orange {
+    background: #f6aa00;
 }
 
-@media (min-width: 768px) {
-    .entry-button p {
-        padding-left: 2rem;
-    }
+.entry-button p {
+    color: var(--color-white);
 }
 
 /* ヘッダー------------------ */
